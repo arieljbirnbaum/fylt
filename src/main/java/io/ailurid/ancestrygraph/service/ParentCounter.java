@@ -1,12 +1,12 @@
-package ancestrygraph.utils;
+package io.ailurid.ancestrygraph.service;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import ancestrygraph.AncestryGraph;
-import ancestrygraph.Node;
+import io.ailurid.ancestrygraph.model.AncestryGraph;
+import io.ailurid.ancestrygraph.model.Node;
 
 /**
  * ParentCounter

@@ -1,4 +1,4 @@
-package ancestrygraph;
+package io.ailurid.ancestrygraph.model;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,11 +18,11 @@ public class AncestryGraph {
      * @param edges List of [parent,child] edges, meeting the requirements described
      *              in the problem spec. **No validation is performed.**
      */
-    public AncestryGraph(int[][] edges) {
+    public AncestryGraph(RawEdgeList rawEdgeList) {
         this.nodes = new HashSet<>();
         this.parentSets = new HashMap<>();
         this.childSets = new HashMap<>();
-        for (int[] edge : edges) {
+        for (int[] edge : rawEdgeList.edges()) {
             Node parent = new Node(edge[0]);
             this.nodes.add(parent);
             Node child = new Node(edge[1]);

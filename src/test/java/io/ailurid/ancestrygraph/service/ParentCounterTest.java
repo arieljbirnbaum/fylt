@@ -1,4 +1,4 @@
-package ancestrygraph.utils;
+package io.ailurid.ancestrygraph.service;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -11,8 +11,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import ancestrygraph.AncestryGraph;
-import ancestrygraph.Node;
+import io.ailurid.ancestrygraph.model.AncestryGraph;
+import io.ailurid.ancestrygraph.model.Node;
+import io.ailurid.ancestrygraph.model.RawEdgeList;
 
 public class ParentCounterTest {
         @ParameterizedTest
@@ -21,7 +22,7 @@ public class ParentCounterTest {
                         int[][] parentChildPairs,
                         Integer[] expectedZeroParentNodes,
                         Integer[] expectedOneParentNodes) {
-                var graph = new AncestryGraph(parentChildPairs);
+                var graph = new AncestryGraph(new RawEdgeList(parentChildPairs));
                 var groupedByParentCount = ParentCounter.groupByParentCount(graph);
 
                 BiConsumer<Integer, Integer[]> checkGroup = (count, expected) -> assertThat(

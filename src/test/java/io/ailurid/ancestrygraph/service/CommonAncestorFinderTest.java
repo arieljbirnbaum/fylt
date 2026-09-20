@@ -1,4 +1,4 @@
-package ancestrygraph.utils;
+package io.ailurid.ancestrygraph.service;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -9,15 +9,16 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import ancestrygraph.AncestryGraph;
-import ancestrygraph.Node;
+import io.ailurid.ancestrygraph.model.AncestryGraph;
+import io.ailurid.ancestrygraph.model.Node;
+import io.ailurid.ancestrygraph.model.RawEdgeList;
 
 public class CommonAncestorFinderTest {
         @ParameterizedTest
         @MethodSource("provideArgsForGroupByParentCount")
         void commonAncestorsAreComputedCorrectly(int[][] parentChildPairs, int[] nodePair,
                         boolean expected) {
-                assertThat(CommonAncestorFinder.fromAncestryGraph(new AncestryGraph(parentChildPairs))
+                assertThat(CommonAncestorFinder.fromAncestryGraph(new AncestryGraph(new RawEdgeList(parentChildPairs)))
                                 .shareCommonAncestor(
                                                 new Node(nodePair[0]),
                                                 new Node(nodePair[1])),

@@ -1,0 +1,13 @@
+= Ancestry Graph Application
+
+== Create New Graph
+
+operation::create[snippets='http-request,http-response,links']
+
+== Find Nodes Grouped by Parent Count
+
+operation::nodesByParentCount[snippets='http-request,http-response']
+
+== Query whether Two Nodes Share a Common Ancestor
+
+operation::shareCommonAncestor[snippets='http-request,http-response']

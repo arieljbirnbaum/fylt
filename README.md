@@ -118,6 +118,18 @@ Test your solution.
 * API documentation is mandatory (and shall be available without building the application)
 * Think about the state and concurrent access
 
+### Implementation Notes
+
+* `nodesByParentCount` endpoint includes also a group for nodes with two parents.
+* Repository holds collection in-memory. Mocks aren't necessary for integration test.
+* Repository uses `ConcurrentHashMap` to allow concurrent insertion and access.
+* API documentation can be found here: [api.md](api.md)
+  * To regenerate:
+    ```
+    mvnw package
+    cp -f target/generated-docs/api.md ./api.md
+    ```
+
 ## Resources
 
 [^1]: https://git-scm.com
