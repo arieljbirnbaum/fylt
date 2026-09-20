@@ -15,6 +15,11 @@ algorithm solving skills.
 * Please use a build system, e.g., Maven or Gradle, AND leave some documentation about how to build and run your solution. `build.sh` and `start.sh` scripts are welcome.
 * Feel free to use additional libraries as long as they do not solve the core problem for you. This test is to assess your algorithm solving skills.
 
+### Build Instructions
+
+The project uses Maven; wrapper script `mvnw` (and `mvnw.cmd` for Windows shell) provided.
+Run unit tests with `mvnw test`.
+
 # Tasks
 
 ## Task 1 - The Algorithm
@@ -72,6 +77,12 @@ Test your solution.
 * Solution methods returning a String will be always wrong.
 * Think about complexities.
 
+### Implementation Notes
+
+* Using `HashSet` and `HashMap` for flexibility and ease of implementation. Avoiding `Collectors` and similar for compliance.
+* Not explicitly stated, but the given input spec does not allow mentioning isolated nodes (ie. nodes that have no parent AND no child). If allowed, such nodes *would* be part of the zero-parent set.
+* For this task alone, it suffices to only count the incidences for each node (it is guaranteed that there are no duplicate entries). We compute a richer representation for compatibility with the following tasks.
+* End-to-end runtime is linear in the number of (nodes and) edges.
 
 ## Task 2 - Complex relationships
 
