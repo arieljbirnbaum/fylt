@@ -99,6 +99,12 @@ Example based on the sample graph of Task 1, two nodes as input:
 
 Test your solution.
 
+### Implementation Notes
+
+* Same structures as Task 1.
+* Assuming that the same input graph will be queried repeatedly with multiple node pairs; opted for an upfront computation of all pairs sharing a common ancestor.
+* Initialization is quadratic in the number of nodes. Subsequent queries run in constant time.
+
 ## Task 3 - REST with Spring
 
 Please implement a **Spring Boot** and **Spring Framework based** REST service that provides Task 1 and Task 2 via an API. Thus, your solution shall accept an input graph and provide the result for Task 1 and Task 2 via API. For Task 2 it shall accept user input (for the node pair).
